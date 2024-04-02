@@ -20,5 +20,6 @@ from second_file import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('helo/', views.first_one)
+    path('helo/', views.first_one),
+    path('renurl/',views.checking_render)
 ]
