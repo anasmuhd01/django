@@ -8,4 +8,35 @@ def first_one(request):
     return HttpResponse('helo django')
 
 def checking_render(req):
-    return render(req, "helo.html")
+    sample_dic = {'movies':[{
+        
+        'description':'this is sample',
+        'year':'2001',
+        'success':False
+        },
+        {
+        'title':'two',
+        'description':'this is sample',
+        'year':'2001',
+        'success':False
+        },
+        {
+        'title':'three',
+        'description':'this is sample',
+        'year':'2001',
+        'success':True
+        },
+        {
+        'title':'four',
+        'description':'this is sample',
+        'year':'2001',
+        'success':False
+        },
+        {
+        'title':'five',
+        'description':'this is sample',
+        'year':'2001',
+        'success':True
+        },]}
+
+    return render(req, "helo.html", sample_dic)
