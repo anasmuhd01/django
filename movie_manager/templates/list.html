@@ -1,2 +1,19 @@
 {% include 'menu.html' %}
+{% load static %}
+{% block content%}
 <h1>list</h1>
+
+{% for movi_obj in movies %}
+
+<h2>title : {{ movi_obj.title | default:'no data available' }}</h2>
+<img src="{% static 'images/' %}{{movi_obj.img}}" alt="" length="100" width="100">
+<h2>year : {{ movi_obj.year }}</h2>
+<h3>description :{{ movi_obj.description }}</h3>
+{% if movi_obj.success %}
+<h3>filim was successfull</h3>
+{% else %}
+<h3>not successfull</h3>
+{% endif %}
+{% endfor %}
+
+{% endblock content%}
